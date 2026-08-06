@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./signup.css";
+import "./Signup.css";
 
 function Signup() {
   const [accountType, setAccountType] = useState("personal");
@@ -60,7 +60,7 @@ function Signup() {
 
       <div className="signup-wrapper">
         <div className={`signup-container ${accountType === "business" ? "business-mode" : ""}`}>
-          
+
           {/* Top Notice (Only for Personal) */}
           {accountType === "personal" && (
             <div className="security-notice">
@@ -229,28 +229,28 @@ function Signup() {
                 <div className="input-grid grid-2">
                   <div className="input-group">
                     <label htmlFor="zip">ZIP / Pincode *</label>
-                    <input 
-                      type="text" 
-                      id="zip" 
+                    <input
+                      type="text"
+                      id="zip"
                       value={zipCode}
                       onChange={handlePincodeChange}
                       maxLength="6"
                       placeholder="Enter 6-digit Pincode"
-                      required 
+                      required
                     />
                     {isFetchingPin && <span style={{ fontSize: "11px", color: "#a26c58", marginTop: "4px" }}>Fetching location...</span>}
                     {pinError && <span style={{ fontSize: "11px", color: "#c53030", marginTop: "4px" }}>{pinError}</span>}
                   </div>
                   <div className="input-group">
                     <label htmlFor="country">Country *</label>
-                    <input 
-                      type="text" 
-                      id="country" 
-                      value={country} 
-                      onChange={(e) => setCountry(e.target.value)} 
+                    <input
+                      type="text"
+                      id="country"
+                      value={country}
+                      onChange={(e) => setCountry(e.target.value)}
                       placeholder="Auto-filled"
-                      readOnly={!!country} 
-                      required 
+                      readOnly={!!country}
+                      required
                       style={{ opacity: country ? 0.8 : 1 }}
                     />
                   </div>
@@ -259,27 +259,27 @@ function Signup() {
                 <div className="input-grid grid-2">
                   <div className="input-group">
                     <label htmlFor="city">City *</label>
-                    <input 
-                      type="text" 
-                      id="city" 
-                      value={city} 
-                      onChange={(e) => setCity(e.target.value)} 
+                    <input
+                      type="text"
+                      id="city"
+                      value={city}
+                      onChange={(e) => setCity(e.target.value)}
                       placeholder="Auto-filled"
-                      readOnly={!!city} 
-                      required 
+                      readOnly={!!city}
+                      required
                       style={{ opacity: city ? 0.8 : 1 }}
                     />
                   </div>
                   <div className="input-group">
                     <label htmlFor="state">State *</label>
-                    <input 
-                      type="text" 
-                      id="state" 
-                      value={stateName} 
-                      onChange={(e) => setStateName(e.target.value)} 
+                    <input
+                      type="text"
+                      id="state"
+                      value={stateName}
+                      onChange={(e) => setStateName(e.target.value)}
                       placeholder="Auto-filled"
-                      readOnly={!!stateName} 
-                      required 
+                      readOnly={!!stateName}
+                      required
                       style={{ opacity: stateName ? 0.8 : 1 }}
                     />
                   </div>
