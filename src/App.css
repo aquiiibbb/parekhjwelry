@@ -1,0 +1,26 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.top-backdrop {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, #e9eaea 0%, #d3d5d6 45%, #b9bcbe 100%);
+}
+
+.top-backdrop::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0.04) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+main {
+  flex: 1;
+}

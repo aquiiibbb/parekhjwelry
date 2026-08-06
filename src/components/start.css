@@ -1,0 +1,535 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@300;400;500;600&display=swap");
+
+:root {
+  --cw-bg: #eeece7;
+  --cw-bg-2: #f6f4f0;
+  --cw-ink: #1c1c1c;
+  --cw-ink-soft: #6b6b6b;
+  --cw-ink-faint: #9a9a9a;
+  --cw-rose: #c17a5f;
+  --cw-rose-soft: #d99a82;
+  --cw-rose-ghost: rgba(193, 122, 95, 0.14);
+  --cw-line: rgba(193, 122, 95, 0.35);
+  --cw-white: #ffffff;
+  --cw-border: rgba(0, 0, 0, 0.06);
+  --font-script: "Dancing Script", cursive;
+  --font-body: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  
+  --primary-gradient: linear-gradient(90deg, #D59F89 0%, #B26E59 100%);
+  --btn-light-bg: #F7EFEA;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.cw-page.process-wrapper {
+  font-family: var(--font-body);
+  color: var(--cw-ink);
+  background: var(--cw-bg-2);
+  min-height: 100vh;
+  padding: 40px 20px 120px 20px; /* space for bottom bar */
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ------------------------------------------------------------------ */
+/* STEP 1: Select-your-piece grid (start.jsx styles)                  */
+/* ------------------------------------------------------------------ */
+
+.sms-grid-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sms-grid__title {
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: 56px;
+  margin: 0 0 50px;
+  color: var(--cw-ink);
+}
+
+.sms-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+}
+
+.sms-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  background: var(--cw-rose-ghost);
+  border: 1px solid var(--cw-border);
+  border-radius: 18px;
+  padding: 16px 16px 20px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.sms-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px rgba(193, 122, 95, 0.18);
+  border-color: var(--cw-rose-soft);
+}
+
+.sms-card__photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 164 / 122;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--cw-white);
+}
+
+.sms-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sms-card__label {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--cw-ink);
+}
+
+/* ------------------------------------------------------------------ */
+/* Common UI Elements (Bars, Buttons, Typo)                           */
+/* ------------------------------------------------------------------ */
+
+.script-font {
+  font-family: var(--font-script);
+  font-size: 3.5rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.req {
+  color: var(--cw-rose);
+}
+
+.bottom-action-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background: rgba(246, 244, 240, 0.85);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--cw-border);
+  z-index: 100;
+}
+
+.btn-light, .btn-primary {
+  padding: 16px 32px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  max-width: 400px;
+  transition: all 0.2s ease;
+}
+
+.btn-light {
+  background: var(--btn-light-bg);
+  color: var(--cw-ink);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
+}
+
+.btn-primary {
+  background: var(--primary-gradient);
+  color: var(--cw-white);
+  box-shadow: 0 4px 15px rgba(178, 110, 89, 0.3);
+}
+
+.btn-light:hover { background: #EFE4DD; }
+.btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+.btn-primary:disabled { background: #ccc; box-shadow: none; cursor: not-allowed; }
+
+.text-btn {
+  background: none;
+  border: none;
+  color: var(--cw-ink-soft);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+}
+
+/* ------------------------------------------------------------------ */
+/* STEP 2: Services Grid                                               */
+/* ------------------------------------------------------------------ */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: var(--cw-white);
+  border: 2px solid transparent;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 12px;
+}
+
+.service-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.service-card.selected {
+  border-color: var(--cw-rose-soft);
+  background: var(--cw-rose-ghost);
+}
+
+.service-img-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.service-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.checkbox {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.8);
+  border: 1px solid var(--cw-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.service-card.selected .checkbox {
+  background: var(--cw-rose);
+  border-color: var(--cw-rose);
+  color: var(--cw-white);
+}
+
+.service-info {
+  padding: 16px 4px 4px;
+  text-align: center;
+}
+
+.service-info h4 { margin: 0 0 8px 0; font-size: 15px; font-weight: 500;}
+.service-info p { margin: 0 0 12px 0; font-size: 12px; color: var(--cw-ink-soft); line-height: 1.4; }
+.service-info .price { font-size: 11px; color: var(--cw-ink-faint); text-transform: uppercase;}
+
+/* ------------------------------------------------------------------ */
+/* STEP 3: Configuration Form                                          */
+/* ------------------------------------------------------------------ */
+
+.config-step {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.back-link {
+  margin-bottom: 20px;
+}
+
+.config-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.config-left {
+  flex: 1;
+  min-width: 300px;
+}
+
+.product-showcase img {
+  width: 100%;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.product-showcase-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 20px;
+}
+
+.base-price {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.selected-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.pill {
+  background: var(--cw-white);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  border: 1px solid var(--cw-border);
+  color: var(--cw-ink-soft);
+}
+
+.config-right {
+  flex: 1.2;
+  min-width: 350px;
+}
+
+.form-group {
+  margin-bottom: 30px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.sub-label {
+  font-size: 0.8rem;
+  color: var(--cw-ink-soft);
+  margin-top: -4px;
+  margin-bottom: 12px;
+}
+
+select, input[type="text"] {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid var(--cw-border);
+  background: var(--cw-rose-ghost);
+  font-size: 0.95rem;
+  color: var(--cw-ink);
+  font-family: var(--font-body);
+}
+
+/* Segmented Control */
+.segmented-control {
+  display: flex;
+  gap: 10px;
+}
+
+.segmented-control button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--cw-border);
+  background: var(--cw-rose-ghost);
+  color: var(--cw-ink);
+  cursor: pointer;
+  font-weight: 400;
+  font-family: var(--font-body);
+  transition: all 0.2s;
+}
+
+.segmented-control button.active {
+  background: var(--btn-light-bg);
+  border-color: var(--cw-rose-soft);
+  color: var(--cw-ink);
+}
+
+/* Stone Setting Grid */
+.stone-setting-grid {
+  display: flex;
+  gap: 15px;
+}
+
+.stone-card {
+  flex: 1;
+  background: var(--cw-rose-ghost);
+  border: 1px solid var(--cw-border);
+  border-radius: 12px;
+  padding: 15px 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.stone-card.active {
+  background: var(--btn-light-bg);
+  border-color: var(--cw-rose-soft);
+}
+
+.stone-placeholder {
+  width: 50px;
+  height: 50px;
+  background: var(--cw-white);
+  border-radius: 8px;
+  margin: 0 auto 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--cw-rose);
+  box-shadow: inset 0 0 0 1px var(--cw-border);
+}
+
+.stone-card span {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Textarea with icons */
+.textarea-wrapper {
+  position: relative;
+  background: var(--cw-rose-ghost);
+  border-radius: 8px;
+  border: 1px solid var(--cw-border);
+  padding: 14px;
+}
+
+.textarea-wrapper textarea {
+  width: 100%;
+  border: none;
+  background: transparent;
+  resize: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  color: var(--cw-ink);
+}
+
+.textarea-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+  color: var(--cw-ink-soft);
+  font-size: 1.1rem;
+}
+
+.textarea-icons span {
+  cursor: pointer;
+}
+
+/* ------------------------------------------------------------------ */
+/* STEP 4: Review Step (Matching Photo 4)                              */
+/* ------------------------------------------------------------------ */
+
+.review-step {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.review-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.review-block {
+  background: var(--cw-white);
+  border-radius: 16px;
+  padding: 30px 40px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.review-header {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  color: var(--cw-ink-soft);
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.review-title {
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--cw-ink);
+}
+
+.review-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.review-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--cw-border);
+}
+
+.review-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.item-name {
+  font-size: 1rem;
+  color: var(--cw-ink);
+  font-weight: 400;
+}
+
+.item-price {
+  color: var(--cw-ink-soft);
+  font-size: 0.9rem;
+}
+
+.item-value {
+  color: var(--cw-ink);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .sms-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 860px) {
+  .sms-grid__title { font-size: 40px; }
+  .sms-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .config-layout { flex-direction: column; }
+  .review-block { padding: 20px; }
+}
+
+@media (max-width: 480px) {
+  .sms-grid { grid-template-columns: 1fr 1fr; }
+  .bottom-action-bar { flex-direction: column; padding: 15px; }
+  .btn-light, .btn-primary { max-width: 100%; }
+}

@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Inter:wght@300;400;500&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Page / Wrapper Background - Exact match with reference image */
+.faq-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background: transparent;
+  padding: 65px 18px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #856f6f;
+}
+
+/* Center Container */
+.faq-container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* Header Styling */
+.faq-header {
+  margin-bottom: 36px;
+  padding-left: 4px;
+}
+
+.faq-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 56px;
+  font-weight: 500;
+  color: #262626;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.faq-subtitle {
+  font-size: 15.5px;
+  color: #6e6765;
+  font-weight: 400;
+}
+
+/* Cards Area */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px; /* Exact gap between cards */
+}
+
+/* Card Styling - Matching original shape & padding */
+.faq-card {
+  background-color: #e1c1c1;
+  border-radius: 12px;
+  padding: 22px 30px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  transition: box-shadow 0.25s ease, background-color 0.25s ease;
+  user-select: none;
+}
+
+.faq-card:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.faq-question h3 {
+  font-size: 18px;
+  font-weight: 400;
+  color: #2b2b2b;
+  line-height: 1.4;
+}
+
+/* Smooth Accordion Height Transition using Grid */
+.faq-answer-container {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-card.open .faq-answer-container {
+  grid-template-rows: 1fr;
+}
+
+.faq-answer {
+  overflow: hidden;
+}
+
+.faq-answer p {
+  padding-top: 14px;
+  font-size: 14px;
+  line-height: 1.62;
+  color: #6b6b6b;
+  font-weight: 400;
+}
+
+/* Footer Button Styling */
+.faq-footer {
+  margin-top: 36px;
+  padding-left: 4px;
+}
+
+.btn-start-service {
+  background: linear-gradient(180deg, #ba7c6d 0%, #a4695b 100%);
+  color: #ffffff;
+  border: none;
+  padding: 13px 26px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 22px;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(164, 105, 91, 0.3);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-start-service:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}

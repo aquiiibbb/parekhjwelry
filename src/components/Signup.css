@@ -1,0 +1,255 @@
+/* Placeholder styling, remove if not needed */
+.placeholder-header, .placeholder-footer {
+  display: none;
+}
+
+.signup-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 85vh;
+  padding: 40px 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Personal layout width */
+.signup-container {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  transition: max-width 0.3s ease;
+}
+
+/* Business layout wider width */
+.signup-container.business-mode {
+  max-width: 850px;
+}
+
+.security-notice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #7a7a7a;
+  font-size: 12px;
+  margin-bottom: 24px;
+}
+
+.heart-icon {
+  width: 12px;
+  height: 12px;
+  color: #c48a7b; 
+}
+
+/* Toggle Switch Styles */
+.account-toggle {
+  display: flex;
+  background-color: rgba(240, 225, 220, 0.5);
+  border-radius: 50px;
+  padding: 4px;
+  margin-bottom: 24px;
+}
+
+.toggle-btn {
+  flex: 1;
+  padding: 12px 24px;
+  border: none;
+  background: transparent;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggle-btn.active {
+  background-color: #ffffff;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.business-subtext {
+  color: #7a7a7a;
+  font-size: 12px;
+  text-align: left;
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+
+.social-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.btn-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  background-color: rgba(250, 240, 235, 0.7);
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50px;
+  padding: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+  transition: box-shadow 0.2s ease, transform 0.1s ease;
+}
+
+.btn-social:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
+}
+
+.social-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #e5d5ce;
+}
+
+.divider span {
+  padding: 0 16px;
+  color: #999;
+  font-size: 12px;
+}
+
+.signup-form {
+  text-align: left;
+}
+
+/* Grids for multi-column inputs */
+.input-grid {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.input-group {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-group label {
+  font-size: 12px;
+  color: #555;
+  margin-left: 2px;
+}
+
+.input-group input,
+.select-wrapper select {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background-color: rgba(245, 230, 225, 0.65); /* Soft peach background */
+  border-radius: 12px;
+  font-size: 13px;
+  outline: none;
+  box-sizing: border-box;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  color: #333;
+}
+
+.input-group input:focus,
+.select-wrapper select:focus {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-color: #c48a7b;
+}
+
+/* Dropdown Custom Arrow Styling */
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.select-wrapper::after {
+  content: "";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #888;
+  pointer-events: none;
+}
+
+.btn-submit {
+  width: 100%;
+  background: linear-gradient(135deg, #b88673 0%, #a26c58 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 16px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 16px;
+  box-shadow: 0 8px 20px rgba(162, 108, 88, 0.3);
+  transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.btn-submit:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Responsive adjustment for mobile screens */
+@media (max-width: 768px) {
+  .grid-2, .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+/* Login Prompt (Back to login) */
+.login-prompt {
+  margin-top: 32px;
+  font-size: 14px;
+  color: #7a7a7a;
+  text-align: center;
+}
+
+.login-prompt a {
+  color: #a26c58;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-prompt a:hover {
+  text-decoration: underline;
+}

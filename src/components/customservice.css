@@ -1,0 +1,227 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f3e5e0;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #4a4240;
+}
+
+/* Container Width Increase */
+.custom-service-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px 32px;
+}
+
+/* Header Styles */
+.custom-service-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.main-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 52px;
+  font-weight: 500;
+  color: #1a1615;
+  line-height: 1.15;
+  margin-bottom: 32px;
+  letter-spacing: 0.2px;
+}
+
+.subtitle {
+  max-width: 780px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #6e635f;
+  font-weight: 400;
+  text-align: left;
+}
+
+/* Form Layout Gap */
+.custom-service-form {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+/* Card Wrappers with Larger Padding & Radius */
+.form-card {
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  border-radius: 28px;
+  padding: 44px 48px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.02);
+}
+
+.card-label,
+.card-title {
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  color: #38312f;
+  margin-bottom: 8px;
+}
+
+.card-description {
+  font-size: 15px;
+  color: #7c706c;
+  margin-bottom: 28px;
+}
+
+/* Textarea Input */
+.request-textarea {
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 16px;
+  color: #2b2523;
+  line-height: 1.7;
+  margin-top: 16px;
+}
+
+.request-textarea::placeholder {
+  color: #a89c97;
+}
+
+/* Attachments Section - Larger Grid Tiles */
+.attachments-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+
+.attachment-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(195, 178, 171, 0.5);
+  border-radius: 18px;
+  padding: 36px 16px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: inherit;
+  font-size: 13.5px;
+  color: #5c514d;
+}
+
+.attachment-tile:hover {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-color: #bfaaa1;
+  transform: translateY(-2px);
+}
+
+.attachment-icon {
+  width: 28px;
+  height: 28px;
+  stroke: #c88a75;
+}
+
+/* Contact Info Section */
+.contact-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-group label {
+  font-size: 14px;
+  color: #5c514d;
+  font-weight: 500;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 18px 20px;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.55);
+  font-family: inherit;
+  font-size: 15px;
+  color: #2b2523;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.input-group input:focus {
+  background-color: #ffffff;
+  border-color: #c88a75;
+}
+
+.input-group input::placeholder {
+  color: #a89c97;
+}
+
+/* Submit Section */
+.submit-section {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 12px;
+}
+
+.submit-button {
+  background-color: #c8a294;
+  color: #ffffff;
+  border: none;
+  border-radius: 30px;
+  padding: 18px 40px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.submit-button:hover {
+  background-color: #b89082;
+  transform: translateY(-1px);
+}
+
+.submit-note {
+  font-size: 13.5px;
+  color: #7c706c;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .attachments-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .main-title {
+    font-size: 36px;
+  }
+  .form-card {
+    padding: 28px 24px;
+  }
+  .attachments-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .contact-fields {
+    grid-template-columns: 1fr;
+  }
+  .submit-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

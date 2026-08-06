@@ -1,0 +1,193 @@
+/* Placeholder styling just for visibility in isolation, remove if not needed */
+.placeholder-header, .placeholder-footer {
+  display: none; /* Displaying none so it relies on your actual header/footer */
+}
+
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh; /* Adjust based on your header/footer height */
+  padding: 40px 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 460px;
+  text-align: center;
+}
+
+.security-notice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #7a7a7a;
+  font-size: 13px;
+  margin-bottom: 24px;
+}
+
+.heart-icon {
+  width: 14px;
+  height: 14px;
+  color: #c48a7b; /* Subtle copper color */
+}
+
+.login-title {
+  color: #333;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 32px;
+}
+
+.social-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.btn-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  background-color: #ffffff;
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 50px;
+  padding: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s ease, transform 0.1s ease;
+}
+
+.btn-social:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.divider span {
+  padding: 0 16px;
+  color: #999;
+  font-size: 13px;
+}
+
+.login-form {
+  text-align: left;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  font-size: 13px;
+  color: #555;
+  margin-left: 4px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid rgba(255,255,255,0.4);
+  background-color: #fafafa; 
+  border-radius: 12px;
+  font-size: 14px;
+  outline: none;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.input-group input::placeholder {
+  color: #aaa;
+}
+
+.input-group input:focus {
+  background-color: #fff;
+  border-color: #c48a7b;
+}
+
+.btn-submit {
+  width: 100%;
+  background: linear-gradient(135deg, #b88673 0%, #a26c58 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 16px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 12px;
+  box-shadow: 0 8px 20px rgba(162, 108, 88, 0.3);
+  transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.btn-submit:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.signup-prompt {
+  margin-top: 32px;
+  font-size: 14px;
+  color: #7a7a7a;
+}
+
+.signup-prompt a {
+  color: #a26c58;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.signup-prompt a:hover {
+  text-decoration: underline;
+}
+
+/* Password header setup to keep label and link on the same line */
+.password-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 4px; /* Align with input label spacing */
+}
+
+/* Base style for the Forgot password link */
+.forgot-password {
+  font-size: 12px;
+  color: #a26c58; /* Copper/Rose-gold color to match your theme */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Hover effect */
+.forgot-password:hover {
+  text-decoration: underline;
+}
